@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="Default Web Site/aloni.ExternalApi" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^E:\\Aloni\\AloniServer\\AloniExternalService\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^E:\\Aloni\\AloniServer\\AloniExternalService\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+</parameters>

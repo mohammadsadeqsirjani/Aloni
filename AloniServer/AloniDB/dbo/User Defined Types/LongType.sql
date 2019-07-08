@@ -1,0 +1,1 @@
+﻿CREATE TYPE [dbo].[LongType] AS TABLE(id bigint not null)

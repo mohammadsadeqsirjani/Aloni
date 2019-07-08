@@ -1,0 +1,18 @@
+﻿CREATE TABLE [dbo].[TB_PAYMENTPORTAL_TRANSACTION_LOG]
+(
+	[id] BIGINT NOT NULL PRIMARY KEY IDENTITY, 
+    [fk_paymentPortal_id] INT NOT NULL, 
+    [fk_orderHdr_id] BIGINT NULL, 
+    [fk_status_id] INT NOT NULL, 
+    [srcCardNo] VARCHAR(50) NULL, 
+    [srcBank] VARCHAR(50) NULL, 
+    [amount_org] MONEY NOT NULL, 
+    [amount_paid] MONEY NULL, 
+    [info] TEXT NULL, 
+    [succeed] BIT NOT NULL, 
+    [fk_usr_requesterUserId] BIGINT NOT NULL, 
+    [fk_paymentPortalTransactionType_typeId] INT NOT NULL, 
+    CONSTRAINT [FK_TB_PAYMENTPORTAL_TRANSACTION_LOG_TB_PAYMENTPORTAL] FOREIGN KEY ([fk_paymentPortal_id]) REFERENCES [TB_PAYMENTPORTAL]([id]), 
+    CONSTRAINT [FK_TB_PAYMENTPORTAL_TRANSACTION_LOG_TB_USR] FOREIGN KEY ([fk_usr_requesterUserId]) REFERENCES [TB_USR]([id]), 
+    CONSTRAINT [FK_TB_PAYMENTPORTAL_TRANSACTION_LOG_TB_TYP_PAYMENTPORTAL_TRANSACTIONTYPE] FOREIGN KEY ([fk_paymentPortalTransactionType_typeId]) REFERENCES [TB_TYP_PAYMENTPORTAL_TRANSACTIONTYPE]([id]) 
+)

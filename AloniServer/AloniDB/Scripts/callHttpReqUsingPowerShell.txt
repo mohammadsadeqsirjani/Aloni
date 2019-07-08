@@ -1,0 +1,2 @@
+$http_Request= New-Object system.Net.WebClient;
+$Result = $http_Request.downloadString("http://localhost/api.aloni.shop/Communication/sendsms?userName=aloni-co97500055&password=lzgeWwPjnBagYwDL&domain=magfa&msgBody=test&srcNo=98300042336&dstNo=+989353753855")

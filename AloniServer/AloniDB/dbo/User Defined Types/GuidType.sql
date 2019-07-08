@@ -1,0 +1,3 @@
+﻿CREATE TYPE [dbo].[GuidType] AS TABLE (
+    [id] UNIQUEIDENTIFIER NULL);
+

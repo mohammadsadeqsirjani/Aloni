@@ -1,0 +1,1 @@
+select dbo.func_sendSms('http://31.171.223.94:3383/api.aloni.shop/Communication','aloni-co97500055','lzgeWwPjnBagYwDL','magfa','test','98300042336','+989353753855')

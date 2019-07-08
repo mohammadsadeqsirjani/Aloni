@@ -1,0 +1,1 @@
+﻿CREATE TYPE [dbo].[LongIdTitleType] AS TABLE(id bigint not null,title varchar(max))

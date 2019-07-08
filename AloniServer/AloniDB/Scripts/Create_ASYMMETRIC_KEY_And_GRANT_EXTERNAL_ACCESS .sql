@@ -1,0 +1,10 @@
+USE [master];
+
+CREATE ASYMMETRIC KEY externalAccessKey
+  AUTHORIZATION [dbo]
+  FROM EXECUTABLE FILE = 'C:\AloniDB.dll';
+
+CREATE LOGIN cheetLogin
+  FROM ASYMMETRIC KEY externalAccessKey;
+
+GRANT EXTERNAL ACCESS ASSEMBLY TO cheetLogin; -- or "UNSAFE" instead of "EXTERNAL ACCESS"

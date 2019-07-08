@@ -1,0 +1,9 @@
+E:\Aloni\AloniServer\AloniDB\bin\Release\AloniDB.dacpac
+E:\Aloni\AloniServer\AloniDB\bin\Release\AloniDB.dll
+E:\Aloni\AloniServer\AloniDB\bin\Release\AloniDB.pdb
+E:\Aloni\AloniServer\AloniDB\obj\Release\Model.xml
+E:\Aloni\AloniServer\AloniDB\obj\Release\refactor.xml
+E:\Aloni\AloniServer\AloniDB\obj\Release\postdeploy.sql
+E:\Aloni\AloniServer\AloniDB\obj\Release\predeploy.sql
+E:\Aloni\AloniServer\AloniDB\obj\Release\AloniDB.dll
+E:\Aloni\AloniServer\AloniDB\obj\Release\AloniDB.pdb

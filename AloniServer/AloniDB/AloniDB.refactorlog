@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="6ef559d3-e13b-4478-93a6-cca206d9d68e" ChangeDateTime="11/17/2018 08:16:12">
+    <Property Name="ElementName" Value="[dbo].[TB_ORDER_DTL].[recived]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[TB_ORDER_DTL]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="received" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a3845b89-e3d6-43d0-b4de-40b4512373ab" ChangeDateTime="11/17/2018 08:20:35">
+    <Property Name="ElementName" Value="[dbo].[TB_ORDER_HDR].[packageRecived]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[TB_ORDER_HDR]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="packageReceive" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="678ea416-09bf-406f-8258-edae50dbbb34" ChangeDateTime="11/17/2018 08:20:46">
+    <Property Name="ElementName" Value="[dbo].[TB_ORDER_HDR].[packageReceive]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[TB_ORDER_HDR]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="packageReceived" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a38e5ab9-2b91-4642-b168-94fd4bc4633b" ChangeDateTime="01/01/2019 13:24:28">
+    <Property Name="ElementName" Value="[dbo].[TB_ORDER_DTL_BASE].[promo_]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[TB_ORDER_DTL_BASE]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="promo_dsc" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1975a265-8dce-44ed-86b7-5ba7e64dd8be" ChangeDateTime="01/26/2019 07:01:38">
+    <Property Name="ElementName" Value="[dbo].[TB_ORDER_DTL_BASE].[promo_discount_percent]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[TB_ORDER_DTL_BASE]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="store_promo_discount_percent" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="2422eb7b-2cd3-48d2-a2f3-773700b5a3e6" ChangeDateTime="01/26/2019 07:01:41">
+    <Property Name="ElementName" Value="[dbo].[TB_ORDER_DTL_BASE].[promo_dsc]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[TB_ORDER_DTL_BASE]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="store_promo_dsc" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="8f08dfd5-b2c1-431e-aacc-1d624d61fbbd" ChangeDateTime="03/02/2019 05:20:03">
+    <Property Name="ElementName" Value="[dbo].[TB_STORE_ITEM_COLOR].[effectONPrice]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[TB_STORE_ITEM_COLOR]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="colorCost" />
+  </Operation>
+</Operations>

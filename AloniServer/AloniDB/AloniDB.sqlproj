@@ -1,0 +1,722 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>AloniDB</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{fa7b33e5-e5c3-40bd-8434-59281abd114f}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>AloniDB</RootNamespace>
+    <AssemblyName>AloniDB</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1256_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+    <PermissionSet>EXTERNAL_ACCESS</PermissionSet>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>AloniKey.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="Scripts" />
+    <Folder Include="Security\" />
+    <Folder Include="Clr" />
+    <Folder Include="dbo\User Defined Types\" />
+    <Folder Include="Storage\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\TB_TYP_TECHNICALINFO_TRANSLATIONS.sql" />
+    <Build Include="dbo\Tables\TB_TECHNICALINFO_VALUES.sql" />
+    <Build Include="dbo\Tables\TB_TYP_DOCUMENT_TYPE.sql" />
+    <Build Include="dbo\Tables\TB_CITY.sql" />
+    <Build Include="dbo\Tables\TB_TYP_DOCUMENT_TYPE_TRANSLATIONS.sql" />
+    <Build Include="dbo\Tables\TB_TECHNICALINFO_VALUES_TRANSLATIONS.sql" />
+    <Build Include="dbo\Tables\TB_ORDER_HDR.sql" />
+    <Build Include="dbo\Tables\TB_DOCUMENT.sql" />
+    <Build Include="dbo\Tables\TB_STAFF.sql" />
+    <Build Include="dbo\Tables\TB_ORDER_DTL.sql" />
+    <Build Include="dbo\Tables\TB_COUNTRY.sql" />
+    <Build Include="dbo\Tables\TB_DOCUMENT_STORE.sql" />
+    <Build Include="dbo\Tables\TB_ITEM_TECHNICALINFO.sql" />
+    <Build Include="dbo\Tables\TB_STORE_ITEM_QTY.sql" />
+    <Build Include="dbo\Tables\TB_USR.sql" />
+    <Build Include="dbo\Tables\TB_STATUS.sql" />
+    <Build Include="dbo\Tables\TB_STORE_EXPERTISE.sql" />
+    <Build Include="dbo\Tables\TB_TYP_STORE_EXPERTISE_TRANSLATIONS.sql" />
+    <Build Include="dbo\Tables\TB_TYP_STORE_TYPE.sql" />
+    <Build Include="dbo\Tables\TB_DOCUMENT_ITEM.sql" />
+    <Build Include="dbo\Tables\TB_TYP_STORE_CATEGORY_TRANSLATIONS.sql" />
+    <Build Include="dbo\Tables\TB_APP_FUNC.sql" />
+    <Build Include="dbo\Tables\TB_MESSAGE.sql" />
+    <Build Include="dbo\Tables\TB_DOCUMENT_USR.sql" />
+    <Build Include="dbo\Tables\TB_APP_FUNC_TRANSLATIONS.sql" />
+    <Build Include="dbo\Tables\TB_TYP_STORE_TYPE_TRANSLATIONS.sql" />
+    <Build Include="dbo\Tables\TB_LANGUAGE.sql" />
+    <Build Include="dbo\Tables\TB_STAFF_TRANSLATIONS.sql" />
+    <Build Include="dbo\Tables\TB_STORE_PHONE.sql" />
+    <Build Include="dbo\Tables\TB_SYSTEMMESSAGE.sql" />
+    <Build Include="dbo\Tables\TB_ITEM_TECHNICALINFO_TRANSLATIONS.sql" />
+    <Build Include="dbo\Tables\TB_GLOBALSETTINGS.sql" />
+    <Build Include="dbo\Tables\TB_APP.sql" />
+    <Build Include="dbo\Tables\TB_TECHNICALINFO_ITEMGRP.sql" />
+    <Build Include="dbo\Tables\TB_APP_FUNC_USR.sql" />
+    <Build Include="dbo\Tables\TB_TYP_ITEM_GRP_TRANSLATIONS.sql" />
+    <Build Include="dbo\Tables\TB_ITEM_TRANSLATIONS.sql" />
+    <Build Include="dbo\Tables\TB_USR_STAFF.sql" />
+    <Build Include="dbo\Tables\TB_TYP_STORE_CATEGORY.sql" />
+    <Build Include="dbo\Tables\TB_USR_SESSION.sql" />
+    <Build Include="dbo\Tables\TB_STATUS_TRANSLATIONS.sql" />
+    <Build Include="dbo\Tables\TB_INVITATION.sql" />
+    <Build Include="dbo\Tables\TB_EXPERTISE_ITEMGRP.sql" />
+    <Build Include="dbo\Tables\TB_TYP_STORE_EXPERTISE.sql" />
+    <Build Include="dbo\Tables\TB_TYP_ITEM_GRP.sql" />
+    <Build Include="dbo\Tables\TB_STORE_CUSTOMER.sql" />
+    <Build Include="dbo\Tables\TB_ITEM.sql" />
+    <Build Include="dbo\Tables\TB_TYP_TECHNICALINFO.sql" />
+    <Build Include="dbo\Tables\TB_STORE.sql" />
+    <Build Include="dbo\Tables\TB_STORE_ITEM_GROUPING.sql" />
+    <Build Include="dbo\Tables\TB_STORE_GROUPING.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getAllUserAllowedFunc.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getAllUserAllowedArea.sql" />
+    <Build Include="dbo\Stored Procedures\SP_registerUser.sql" />
+    <Build Include="dbo\Tables\TB_TYP_UNIT_TRANSLATIONS.sql" />
+    <Build Include="dbo\Tables\TB_TYP_UNIT.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getAllPortalUser.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getAllPartGrpByLevel.sql" />
+    <Build Include="dbo\Tables\TB_STORE_WARRANTY.sql" />
+    <Build Include="dbo\Tables\TB_STORE_ITEM_WARRANTY.sql" />
+    <Build Include="dbo\Views\vw_itemGrp_fullPath.sql" />
+    <Build Include="dbo\Functions\func_getFullItemGrpDscPath.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getAllPartGrpByTarget.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getAllCounty.sql" />
+    <Build Include="dbo\Stored Procedures\SP_authenticateUser.sql" />
+    <Build Include="dbo\Functions\func_checkToken.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getAllUnit.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getAllItem.sql" />
+    <Build Include="dbo\Stored Procedures\SP_authenticateReq.sql" />
+    <Build Include="dbo\Functions\func_getSysMsg.sql" />
+    <Build Include="dbo\Views\vw_getNewID.sql" />
+    <Build Include="dbo\Functions\func_RandomString.sql" />
+    <Build Include="dbo\Stored Procedures\SP_setNewSession.sql" />
+    <Build Include="dbo\Stored Procedures\SP_stringFormat.sql" />
+    <Build Include="dbo\Stored Procedures\SP_setLogin.sql" />
+    <Build Include="dbo\Stored Procedures\SP_login.sql" />
+    <Build Include="dbo\Tables\TB_LOG_SMS.sql" />
+    <Build Include="dbo\Tables\TB_SMSPANEL.sql" />
+    <Build Include="dbo\Stored Procedures\SP_sendSMS.sql" />
+    <Build Include="dbo\Stored Procedures\SP_logout.sql" />
+    <Build Include="dbo\Stored Procedures\SP_countryGetList.sql" />
+    <Build Include="dbo\Tables\TB_STORECATEGORY_STOREEXPERTISE.sql" />
+    <Build Include="dbo\Tables\TB_STATE.sql" />
+    <Build Include="dbo\Stored Procedures\SP_cityGetList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_stateGetList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_typStoreCategoryGetList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_typStoreExpertiseGetList.sql" />
+    <Build Include="dbo\User Defined Types\ExpertiseTableType.sql" />
+    <Build Include="dbo\Stored Procedures\SP_storeAdd.sql" />
+    <Build Include="dbo\Stored Procedures\SP_updateStoreLocation.sql" />
+    <Build Include="dbo\User Defined Types\PhoneType.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getAllitemGrp.sql" />
+    <Build Include="dbo\Stored Procedures\SP_addDocument.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getDocument.sql" />
+    <Build Include="dbo\Stored Procedures\SP_addaMessage.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getMessage.sql" />
+    <Build Include="dbo\Stored Procedures\SP_updateMessage.sql" />
+    <Build Include="dbo\User Defined Types\MessageType.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getUserAccessByStoreId.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getUserRelatedStore.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getItemGroupIncludingItem.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getItemListbyItemGroup.sql" />
+    <Build Include="dbo\Tables\TB_CURRENCY.sql" />
+    <Build Include="dbo\Views\vw_storePendigToReviewGetList.sql" />
+    <Build Include="dbo\Functions\func_getCityById.sql" />
+    <Build Include="dbo\Stored Procedures\SP_storePendigToReviewGetList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_addItems.sql" />
+    <Build Include="dbo\Functions\func_checkItem.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getStoreCurrencyUnit.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getActiveUnit.sql" />
+    <Build Include="dbo\Stored Procedures\SP_barcodeValidation.sql" />
+    <Build Include="dbo\Tables\TB_STORE_SCHEDULE.sql" />
+    <Build Include="dbo\Stored Procedures\SP_updateShiftStoreStatus.sql" />
+    <Build Include="dbo\Stored Procedures\SP_addShchduleStore.sql" />
+    <Build Include="dbo\User Defined Types\ScheduleType.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getStoreScheduleList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_addCustomItem.sql" />
+    <Build Include="dbo\User Defined Types\WarantyType.sql" />
+    <Build Include="dbo\User Defined Types\DocInfoItemType.sql" />
+    <Build Include="dbo\User Defined Types\TechnicalInfoItemType.sql" />
+    <Build Include="dbo\Stored Procedures\SP_updateCustomItem.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getItemListinStore.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getTechnicalInfoListAboutItem.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getTechnicalInfoValues.sql" />
+    <Build Include="dbo\Stored Procedures\SP_searchTemplateItem.sql" />
+    <Build Include="Storage\FTScatalog.sql" />
+    <Build Include="FullTextIndexes.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getCompleteItemInfo.sql" />
+    <Build Include="dbo\Views\vw_storePreRegisterGetList.sql" />
+    <Build Include="dbo\Views\vw_storeDeActiveGetList.sql" />
+    <Build Include="dbo\Views\vw_storeAllGetList.sql" />
+    <Build Include="dbo\Views\vw_storeActiveGetList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_PT_getStoreData.sql" />
+    <Build Include="Storage\SQLStopList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_addStoreGrouping.sql" />
+    <Build Include="dbo\Stored Procedures\SP_addItemsToStoreGrouping.sql" />
+    <Build Include="dbo\User Defined Types\LongType.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getStoreGroupingList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getStoreGroupingItems.sql" />
+    <Build Include="dbo\Functions\Func_GetUserStaffStore.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getItemGroupList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_searchStore.sql" />
+    <Build Include="dbo\Stored Procedures\SP_PT_storeGetMessage.sql" />
+    <Build Include="dbo\Functions\func_getStaffDesc.sql" />
+    <Build Include="dbo\Functions\func_getUserDesc.sql" />
+    <Build Include="dbo\Tables\TB_ADVERTISING.sql" />
+    <Build Include="dbo\Tables\TB_STORE_ITEM_EVALUATION.sql" />
+    <Build Include="dbo\Stored Procedures\SP_PT_addaMessage.sql" />
+    <Build Include="dbo\Stored Procedures\SP_PT_getMarketerData.sql" />
+    <Build Include="dbo\Stored Procedures\SP_PT_setStoreStatus.sql" />
+    <Build Include="dbo\Views\vw_storePerson_all.sql" />
+    <Build Include="dbo\Stored Procedures\SP_PT_setUserStatus.sql" />
+    <Build Include="dbo\Views\vw_storePerson_active.sql" />
+    <Build Include="dbo\Views\vw_storePerson_notActive.sql" />
+    <Build Include="dbo\Tables\TB_TECHNICALINFO_PAGE.sql" />
+    <Build Include="dbo\Views\vw_technicalInfoPage.sql" />
+    <Build Include="dbo\Tables\TB_TECHNICALINFO_TABLE.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getStoreInfo.sql" />
+    <Build Include="dbo\Stored Procedures\SP_typStoreTypeGetList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_PT_getTechnicalInfoListByPageId.sql" />
+    <Build Include="dbo\Tables\TB_STORE_ITEM_COLOR.sql" />
+    <Build Include="dbo\Tables\TB_STORE_ITEM_SIZE.sql" />
+    <Build Include="dbo\Tables\TB_COLOR.sql" />
+    <Build Include="dbo\Tables\TB_COLOR_TRANSLATIONS.sql" />
+    <Build Include="dbo\Views\vw_technicalInfoTableGetList.sql" />
+    <Build Include="dbo\Functions\func_getFileDataType.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getColorList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getItemSizeList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_updateUserLocation.sql" />
+    <Build Include="dbo\Stored Procedures\SP_addOpinion.sql" />
+    <Build Include="dbo\Functions\func_udf_Gregorian_To_Persian.sql" />
+    <Build Include="dbo\Functions\fun_udf_Persian_To_Julian.sql" />
+    <Build Include="dbo\Functions\func_udf_Julian_To_Gregorian.sql" />
+    <Build Include="dbo\Functions\func_getDateByLanguage.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getOpinionList.sql" />
+    <Build Include="dbo\Functions\func_calcDistance.sql" />
+    <Build Include="dbo\Stored Procedures\SP_PT_RegisterNewPortalUser.sql" />
+    <Build Include="dbo\Tables\TB_STORE_DELIVERYTYPES.sql" />
+    <Build Include="dbo\Stored Procedures\SP_PT_getTechnicalInfoListAndValuesByItem.sql" />
+    <Build Include="dbo\Functions\func_getDistanceUnitByLanguage.sql" />
+    <Build Include="dbo\User Defined Types\ColorItemType.sql" />
+    <Build Include="dbo\Views\vw_itemOfficial_all.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getAdvertisementList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getTechnicalInfoListAndValuesByItem.sql" />
+    <Build Include="dbo\Stored Procedures\SP_searchItemListScale1.sql" />
+    <Build Include="dbo\Functions\func_getCurrencyTitleByLanguage.sql" />
+    <Build Include="dbo\Stored Procedures\SP_searchItemListScale2.sql" />
+    <Build Include="dbo\User Defined Types\StoreDeliveryType_Type.sql" />
+    <Build Include="dbo\Stored Procedures\SP_addStoreDeliveryTypes.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getStoreDeliveryTypeList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_updateStoreDeliveryTypes.sql" />
+    <Build Include="dbo\Stored Procedures\SP_updateTaxStoreSettings.sql" />
+    <Build Include="dbo\Stored Procedures\SP_updateStoreOrderStateSetting.sql" />
+    <Build Include="dbo\Tables\TB_TYP_ORDER_DOC_TYPE.sql" />
+    <Build Include="dbo\Tables\TB_TYP_ORDER_DOC_TYPE_TRANSLATIONS.sql" />
+    <Build Include="dbo\Tables\TB_FINANCIAL_ACCOUNTING.sql" />
+    <Build Include="dbo\Tables\TB_FINANCIAL_ACCOUNT.sql" />
+    <Build Include="dbo\Tables\TB_TYP_FINANCIAL_ACCOUNT_TYPE.sql" />
+    <Build Include="dbo\Tables\TB_TYP_FINANCIAL_ACCOUNT_TYPE_TRANSLATIONS.sql" />
+    <Build Include="dbo\Stored Procedures\SP_order_cart_addUpdateItem.sql" />
+    <Build Include="dbo\Functions\func_getOrderId_str.sql" />
+    <Build Include="dbo\Stored Procedures\SP_deleteDocument.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getMyMessageList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getMessageListInSpecialConversation.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getUserProfileInfo.sql" />
+    <Build Include="dbo\Stored Procedures\SP_order_cart_remove.sql" />
+    <Build Include="dbo\User Defined Types\IntType.sql" />
+    <Build Include="dbo\User Defined Types\OrderItemType.sql" />
+    <Build Include="dbo\Stored Procedures\SP_order_getListOfSpecificCstmr.sql" />
+    <Build Include="dbo\Views\vw_storeExpertise.sql" />
+    <Build Include="dbo\Views\vw_storeCustomer_all.sql" />
+    <Build Include="dbo\Tables\TB_TYP_FINANCIAL_REGARD_TYPE.sql" />
+    <Build Include="dbo\Tables\TB_TYP_FINANCIAL_REGARD_TYPE_TRANSLATIONS.sql" />
+    <Build Include="dbo\Stored Procedures\SP_order_cart_removeItem.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getStoreStaffList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_inviteUserToStore.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getInvitationList.sql" />
+    <Build Include="dbo\Functions\Func_GetUserStaffStoreDescription.sql" />
+    <Build Include="dbo\Stored Procedures\SP_responseToInvite.sql" />
+    <Build Include="dbo\Stored Procedures\SP_deleteInvite.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getStoreEmployeeList_customerView.sql" />
+    <Build Include="dbo\Tables\TB_STORE_EMPLOYEE.sql" />
+    <Build Include="dbo\Stored Procedures\SP_addEmployee.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getCustomerByUniqId.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getCustomerListByOrder.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getCustomerByPhone.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getCustomerListOfStore.sql" />
+    <Build Include="dbo\Stored Procedures\SP_joinCustomerToStore.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getAllDocumentListAboutStore.sql" />
+    <Build Include="dbo\Stored Procedures\SP_deleteCustomerFromStore.sql" />
+    <Build Include="dbo\Tables\TB_BANK.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getBankList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getDemoStoreEmployee.sql" />
+    <Build Include="dbo\Stored Procedures\SP_updateEmployee.sql" />
+    <Build Include="dbo\Stored Procedures\SP_deleteEmployee.sql" />
+    <Build Include="dbo\Stored Procedures\SP_setStoreAccount.sql" />
+    <Build Include="dbo\Tables\TB_STORE_TEMPACCOUNTDATA.sql" />
+    <Build Include="dbo\Stored Procedures\SP_deleteStoreDeliveryType.sql" />
+    <Build Include="dbo\Stored Procedures\SP_tryToSetStoreAccount.sql" />
+    <Build Include="dbo\Stored Procedures\SP_tryToActiveSecurePayment.sql" />
+    <Build Include="dbo\Stored Procedures\SP_setActiveSecurePayment.sql" />
+    <Build Include="dbo\Tables\TB_STORE_VITRIN.sql" />
+    <Build Include="dbo\Tables\TB_DOCUMENT_STORE_VITRIN.sql" />
+    <Build Include="dbo\User Defined Types\VitrinDocumentType.sql" />
+    <Build Include="dbo\Stored Procedures\SP_addVitrin.sql" />
+    <Build Include="dbo\Stored Procedures\SP_deleteVitrin.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getStoreVitrinList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_joinToStoreByUser.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getInvitationText.sql" />
+    <Build Include="dbo\Stored Procedures\SP_order_getChangeHistory.sql" />
+    <Build Include="dbo\Functions\func_calcActionOrderTime.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getStoreSale.sql" />
+    <Build Include="dbo\Tables\TB_STORE_SOCIALNETWORK.sql" />
+    <Build Include="dbo\Stored Procedures\SP_changeNotificationStore.sql" />
+    <Build Include="dbo\Tables\TB_STORE_REPORT.sql" />
+    <Build Include="dbo\Stored Procedures\SP_reportStore.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getStoreSuggested.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getStoreDiscountList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getRecentItemList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getTaggedList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getStoreAboutList.sql" />
+    <Build Include="dbo\Tables\TB_STORE_ABOUT.sql" />
+    <Build Include="dbo\Functions\func_getActiveStoreTimeDay.sql" />
+    <Build Include="dbo\Tables\TB_STORE_EVALUATION.sql" />
+    <Build Include="dbo\Tables\TB_STORE_EVALUATION_VOTE.sql" />
+    <Build Include="dbo\Stored Procedures\SP_addStoreEvaluation.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getStoreEvaluationList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_voteToComment.sql" />
+    <Build Include="dbo\Tables\TB_USR_FAMILY.sql" />
+    <Build Include="dbo\Stored Procedures\SP_defineFamily.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getFamilyList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_responsToReqFamily.sql" />
+    <Build Include="dbo\Stored Procedures\SP_PT_getTechnicalInfoListByPageId_Child.sql" />
+    <Build Include="dbo\Stored Procedures\SP_addStoreAbout.sql" />
+    <Build Include="dbo\Stored Procedures\SP_deleteStoreAbout.sql" />
+    <Build Include="dbo\Tables\TB_DOCUMENT_STORE_ABOUT.sql" />
+    <Build Include="dbo\Tables\TB_STORE_MARKETING_MEMBER.sql" />
+    <Build Include="dbo\Tables\TB_STORE_MARKETING.sql" />
+    <Build Include="dbo\Stored Procedures\SP_addPlan.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getStorePlanList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getStorePlannersSubscriberList.sql" />
+    <Build Include="dbo\Tables\TB_USR_LOG.sql" />
+    <Build Include="dbo\Tables\TB_EVENT_TRANSLATION.sql" />
+    <Build Include="dbo\Tables\TB_EVENT.sql" />
+    <Build Include="dbo\Stored Procedures\SP_addSubscribe.sql" />
+    <Build Include="dbo\Stored Procedures\SP_inviteUserToMarketingStorePlan.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getRecentActivityList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_addCustomItemLevel2.sql" />
+    <Build Include="dbo\Stored Procedures\SP_addEntityDocument.sql" />
+    <Build Include="dbo\Stored Procedures\SP_addItemTechnicalInfo.sql" />
+    <Build Include="dbo\Stored Procedures\SP_order_addressGetList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_deleteItemTechnicalInfo.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getTechnicalTableValueList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_addWarranty.sql" />
+    <Build Include="dbo\Stored Procedures\SP_updateWarranty.sql" />
+    <Build Include="dbo\Stored Procedures\SP_deleteWarranty.sql" />
+    <Build Include="dbo\Stored Procedures\SP_order_cart_setDeliveryMethode.sql" />
+    <Build Include="dbo\Stored Procedures\SP_order_cart_submit.sql" />
+    <Build Include="dbo\Stored Procedures\SP_order_cart_getPaymentTypes.sql" />
+    <Build Include="dbo\Tables\TB_TYP_PAYMENT_METHODE.sql" />
+    <Build Include="dbo\Tables\TB_PAYMENTPORTAL.sql" />
+    <Build Include="dbo\Functions\func_getUserCredit.sql" />
+    <Build Include="dbo\Functions\func_getUserFinansialAccountId.sql" />
+    <Build Include="dbo\Functions\func_getStoreFinancialAccountId.sql" />
+    <Build Include="dbo\Functions\func_getRegardTypeDsc.sql" />
+    <Build Include="dbo\Stored Procedures\SP_confirmOnlinePayment.sql" />
+    <Build Include="dbo\Tables\TB_PAYMENTPORTAL_TRANSACTION_LOG.sql" />
+    <Build Include="dbo\Stored Procedures\SP_userCreditSetIncReq.sql" />
+    <Build Include="dbo\Stored Procedures\SP_setEntityDefualtDocument.sql" />
+    <Build Include="dbo\Tables\TB_TYP_PAYMENTPORTAL_TRANSACTIONTYPE.sql" />
+    <Build Include="dbo\Stored Procedures\SP_userCreditGet.sql" />
+    <Build Include="dbo\Functions\func_addThousandsSeperator.sql" />
+    <Build Include="dbo\Tables\TB_CURRENCY_TRANSLATIONS.sql" />
+    <Build Include="dbo\Functions\func_subGrpItemByGrpItemId.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getStatisticItemGroup.sql" />
+    <Build Include="dbo\Functions\func_languageIsRTL.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getMultiPartOrderDetailList.sql" />
+    <Build Include="dbo\Tables\TB_STORE_CERTIFICATE.sql" />
+    <Build Include="dbo\Tables\TB_DOCUMENT_STORE_CERTIFICATE.sql" />
+    <Build Include="dbo\Stored Procedures\SP_updateStoreCertificate.sql" />
+    <Build Include="dbo\Stored Procedures\SP_deleteStoreCertificate.sql" />
+    <Build Include="dbo\Stored Procedures\SP_changeOnlinePaymentStatus.sql" />
+    <Build Include="dbo\Stored Procedures\SP_changeSecurePaymentStatus.sql" />
+    <Build Include="dbo\Stored Procedures\SP_changeStoreType.sql" />
+    <Build Include="dbo\Stored Procedures\SP_searchItemInOrder.sql" />
+    <Build Include="dbo\Stored Procedures\SP_compareItems.sql" />
+    <Build Include="dbo\Functions\func_getUniqueBarcodeItem.sql" />
+    <Build Include="dbo\Tables\TB_SYS_VERSION.sql" />
+    <Build Include="dbo\Stored Procedures\SP_changeSecondLanguageSetting.sql" />
+    <Build Include="dbo\Stored Procedures\SP_initApp.sql" />
+    <Build Include="dbo\Functions\func_getItemUnit.sql" />
+    <Build Include="dbo\Stored Procedures\SP_updateVitrin.sql" />
+    <Build Include="dbo\Views\vw_getUnit.sql" />
+    <Build Include="dbo\Views\vw_getTypeStoreExpertise.sql" />
+    <Build Include="dbo\Views\vw_getTypeStoreCategory.sql" />
+    <Build Include="dbo\Views\vw_getState.sql" />
+    <Build Include="dbo\Views\vw_getStaff.sql" />
+    <Build Include="dbo\Views\vw_getCurrency.sql" />
+    <Build Include="dbo\Views\vw_getCountry.sql" />
+    <Build Include="dbo\Views\vw_getColor.sql" />
+    <Build Include="dbo\Views\vw_getCity.sql" />
+    <Build Include="dbo\Views\vw_getBank.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getLanguage.sql" />
+    <Build Include="dbo\Stored Procedures\SP_updateStoreAbout.sql" />
+    <Build Include="dbo\Functions\func_getPriceAsDisplayValue.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getStoreEmployeeList.sql" />
+    <Build Include="dbo\Tables\TB_TYP_PAYMENT_METHODE_TRANSLATIONS.sql" />
+    <Build Include="dbo\Functions\func_OnlyCustomersAreAbleToSetOrder.sql" />
+    <Build Include="dbo\Functions\func_isUserJoinedToStoreCustomers.sql" />
+    <Build Include="dbo\Functions\func_getMaxRowIdOfOrder.sql" />
+    <Build Include="dbo\Views\vw_getAdvertising.sql" />
+    <Build Include="dbo\Stored Procedures\SP_updatePassword.sql" />
+    <Build Include="dbo\Stored Procedures\SP_checkValidationCode.sql" />
+    <Build Include="dbo\Functions\splitstring.sql" />
+    <Build Include="dbo\Functions\func_udf_Gregorian_To_Persian_withTime.sql" />
+    <Build Include="dbo\Stored Procedures\SP_deleteStoreDate.sql" />
+    <Build Include="dbo\Tables\TB_STORE_ITEM_OPINIONPOLL.sql" />
+    <Build Include="dbo\Tables\TB_STORE_ITEM_OPINIONPOLL_OPTIONS.sql" />
+    <Build Include="dbo\Tables\TB_STORE_ITEM_OPINIONPOLL_OPINIONS.sql" />
+    <Build Include="dbo\Tables\TB_STORE_ITEM_OPINIONPOLL_COMMENTS.sql" />
+    <Build Include="dbo\Stored Procedures\SP_opinionpoll_AddUpdate_v2.sql" />
+    <Build Include="dbo\Stored Procedures\SP_opinionpoll_option_AddUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\SP_opinionpoll_getList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_opinionpoll_opinion_AddUpdate.sql" />
+    <Build Include="dbo\User Defined Types\UDT_opinionType.sql" />
+    <Build Include="dbo\Functions\func_getCntOfOpinionsOfOption.sql" />
+    <Build Include="dbo\Functions\func_getAvgOfOpinionsOfOption.sql" />
+    <Build Include="dbo\Functions\func_getAvgOfOpinionPoll.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getInformationUser.sql" />
+    <Build Include="dbo\Stored Procedures\SP_opinionpoll_comments_getList.sql" />
+    <Build Include="dbo\Tables\TB_ORDER_DTL_BASE.sql" />
+    <Build Include="dbo\Functions\func_getOrderDtls.sql" />
+    <Build Include="dbo\Tables\TB_CONVERSATION.sql" />
+    <Build Include="dbo\Stored Procedures\SP_opinionpoll_copyToMultipleItems.sql" />
+    <Build Include="dbo\Tables\TB_ORDER_HDR_BASE.sql" />
+    <Build Include="dbo\Functions\func_getOrderHdrs.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getEmployeeinStoreList.sql" />
+    <Build Include="dbo\Views\vw_getOpinionPoll.sql" />
+    <Build Include="dbo\Views\vw_getItemsOpinionPollInactive.sql" />
+    <Build Include="dbo\Views\vw_getItemsOpinionPollActive.sql" />
+    <Build Include="dbo\Functions\func_udf_Gregorian_To_PersianLetters.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getInformationOpinionPoll.sql" />
+    <Build Include="dbo\Tables\TB_ORDER.sql" />
+    <Build Include="dbo\Stored Procedures\SP_changeShowStoreActivityStatus.sql" />
+    <Build Include="dbo\Stored Procedures\SP_addItemsByItemGrp.sql" />
+    <Build Include="dbo\Stored Procedures\SP_deleteItem.sql" />
+    <Build Include="dbo\Functions\func_getMaxOrderHdrIdOfOrder.sql" />
+    <Build Include="dbo\Functions\func_getMinOrderHdrIdOfOrder.sql" />
+    <Build Include="dbo\Stored Procedures\SP_order_getListOfSpecificStore.sql" />
+    <Build Include="dbo\Stored Procedures\SP_order_setReviewStatus.sql" />
+    <Build Include="dbo\Stored Procedures\SP_order_package_send.sql" />
+    <Build Include="dbo\User Defined Types\UDT_order_packageSendType.sql" />
+    <Build Include="dbo\Functions\func_stringFormat_1.sql" />
+    <Build Include="dbo\Functions\func_stringFormat_2.sql" />
+    <Build Include="dbo\Tables\TB_STORE_CUSTOMCATEGORY_ITEM.sql" />
+    <Build Include="dbo\Tables\TB_STORE_CUSTOM_CATEGORY.sql" />
+    <Build Include="dbo\Stored Procedures\SP_addStoreCustomCategory.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getCustomCategoryList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_deleteCustomeCategory.sql" />
+    <Build Include="dbo\Views\vw_getOrderList.sql" />
+    <Build Include="dbo\Views\vw_getPortalUsr.sql" />
+    <Build Include="dbo\Stored Procedures\SP_order_setPaidAsCash.sql" />
+    <Build Include="dbo\Functions\func_financial_getRegardTypDsc.sql" />
+    <Build Include="dbo\Stored Procedures\SP_order_update.sql" />
+    <Build Include="dbo\User Defined Types\UDT_order_dtl.sql" />
+    <Build Include="dbo\User Defined Types\UDT_func_getOrderDtlsTableType.sql" />
+    <Build Include="dbo\Tables\TB_ORDER_CORRESPONDENCE.sql" />
+    <Build Include="dbo\Stored Procedures\SP_order_correspondenceGetList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_order_correspondenceAdd.sql" />
+    <Build Include="dbo\Stored Procedures\SP_order_invoiceGet.sql" />
+    <Build Include="dbo\Functions\func_order_calcPaymentStatus.sql" />
+    <Build Include="dbo\Stored Procedures\SP_order_cancel.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getUserStatistic.sql" />
+    <Build Include="dbo\Stored Procedures\SP_order_package_delivery.sql" />
+    <Build Include="dbo\User Defined Types\UDT_order_package_deliveryType.sql" />
+    <Build Include="dbo\Views\vw_getOrderDtlList.sql" />
+    <Build Include="dbo\Views\vw_getOrderHdrList.sql" />
+    <Build Include="dbo\Tables\TB_STORE_CUSTOMER_GROUP.sql" />
+    <Build Include="dbo\Stored Procedures\SP_addStoreCustomerGrouping.sql" />
+    <Build Include="dbo\Stored Procedures\SP_updateStoreCustomerGrouping.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getStoreCustomerGrouping.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SYS_order_cart_delete.sql" />
+    <Build Include="dbo\Stored Procedures\SP_usrSession_updatePushNotiClientToken.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getTrackingOrderInfo.sql" />
+    <Build Include="dbo\Functions\func_getOrderStatus.sql" />
+    <Build Include="dbo\Functions\func_getStoreDefaultImage.sql" />
+    <Build Include="dbo\Functions\func_getItemDefaultImage.sql" />
+    <Build Include="dbo\Tables\TB_TERMS_AND_CONDITIONS.sql" />
+    <Build Include="dbo\Tables\TB_TERMS_AND_CONDITIONS_TRANSLATIONS.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SYS_sendPushNotification.sql" />
+    <Build Include="dbo\Stored Procedures\SP_termsAndConditions_accept.sql" />
+    <Build Include="dbo\Stored Procedures\SP_termsAndConditions_getLastVersion.sql" />
+    <Build Include="dbo\Views\vw_getTermsAndConditionsList.sql" />
+    <Build Include="dbo\Tables\TB_SYS_VERSION_TRANSLATIONS.sql" />
+    <Build Include="dbo\Stored Procedures\SP_searchItemsInSpesificStore.sql" />
+    <Build Include="dbo\User Defined Types\UDT_pushNotiTargetType.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SYS_sendPushNotificationToStoreUsers.sql" />
+    <Build Include="dbo\Tables\TB_SYS_PUSHNOTIFICATION.sql" />
+    <Build Include="dbo\Tables\TB_SYS_PUSHNOTIFICATION_TRANSLATIONS.sql" />
+    <Build Include="dbo\Views\vw_getPendingToReview_StoreItems.sql" />
+    <Build Include="dbo\Functions\func_pt_returnItemPicSlider.sql" />
+    <Build Include="dbo\Functions\func_pt_getCountOfImageItem.sql" />
+    <Build Include="dbo\Functions\func_getMinMaxPriceInItemGroup.sql" />
+    <Build Include="dbo\Stored Procedures\SP_addItemToCategory.sql" />
+    <Build Include="dbo\Functions\func_getPriceAsDisplayValue_v2.sql" />
+    <Build Include="dbo\Functions\func_getCurrencyDscOfStore.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getCustomCategoryStoreItemList.sql" />
+    <Build Include="dbo\Functions\func_pt_itemOfficial_all.sql" />
+    <Build Include="dbo\Tables\TB_TYP_OBJECT_GRP_TRANSLATIONS.sql" />
+    <Build Include="dbo\Tables\TB_TYP_OBJECT_GRP.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getObjectGroupList.sql" />
+    <Build Include="dbo\Tables\TB_TYP_STORE_PERSONALITY_TYPE.sql" />
+    <Build Include="dbo\Tables\TB_TYP_STORE_PERSONALITY_TYPE_TRANSLATIONS.sql" />
+    <Build Include="dbo\Stored Procedures\SP_typStorePesrsonalityTypeGetList.sql" />
+    <Build Include="dbo\Tables\TB_STORE_ITEMGRP_PANEL_CATEGORY.sql" />
+    <Build Include="dbo\User Defined Types\LongIdTitleType.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getObjectinStoreList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_order_correspondence_ticket_setAsControlled.sql" />
+    <Build Include="dbo\Functions\storePanelCategory_getSelfAndParents.sql" />
+    <Build Include="dbo\Tables\TB_STORE_ITEM_SCHEDULE.sql" />
+    <Build Include="dbo\Stored Procedures\SP_storeItemSchedule_addUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\SP_storeItemSchedule_getList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_PT_updateStaffPortalUser.sql" />
+    <Build Include="dbo\Functions\func_pt_countOfImgItem.sql" />
+    <Build Include="dbo\Stored Procedures\SP_PT_updateUser.sql" />
+    <Build Include="dbo\Tables\TB_ORDER_ADDRESS.sql" />
+    <Build Include="dbo\Stored Procedures\SP_addUpdateOrderAddress.sql" />
+    <Build Include="dbo\Stored Procedures\SP_deleteOrderAddress.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getOrderAddress.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getAllStoreItems.sql" />
+    <Build Include="dbo\Stored Procedures\SP_leftCustomerFromStore.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getNearByLocation.sql" />
+    <Build Include="dbo\Functions\func_pt_itemOfficial_all_count.sql" />
+    <Build Include="dbo\Functions\func_pt_itemOfficial_PendingToReview.sql" />
+    <Build Include="dbo\Functions\func_pt_itemOfficial_PendingToReview_Count.sql" />
+    <Build Include="dbo\Functions\func_pt_itemOfficial_ref.sql" />
+    <Build Include="dbo\Functions\func_pt_itemOfficial_ref_Count.sql" />
+    <Build Include="dbo\Functions\func_pt_itemOfficial_NonRef.sql" />
+    <Build Include="dbo\Functions\func_pt_itemOfficial_NonRef_Count.sql" />
+    <Build Include="dbo\Stored Procedures\SP_PT_disableUserSession.sql" />
+    <Build Include="dbo\Tables\TB_TYP_STORE_REPORT_TYPE.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getSocialNetworkList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_socialNetworkAddUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\SP_DeleteSocialNetworkAccount.sql" />
+    <Build Include="dbo\Stored Procedures\SP_typeStoreReportTypeGetList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getTechnicalInfoBaseItemGroupId.sql" />
+    <Build Include="dbo\Stored Procedures\SP_ConvertFile.sql" />
+    <Build Include="dbo\Tables\TB_Store_Convert_File_Log.sql" />
+    <Build Include="dbo\Stored Procedures\SP_addConvertFileLog.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getConvertResult.sql" />
+    <Build Include="dbo\Stored Procedures\SP_CrashReport.sql" />
+    <Build Include="dbo\Tables\TB_CONTACTUS.sql" />
+    <Build Include="dbo\Tables\TB_TYP_CONTACTUS_DEPARTMENT.sql" />
+    <Build Include="dbo\Stored Procedures\SP_searchItemListScale1_COPY.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getItemListinStore_Copy.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getFamilyTitle.sql" />
+    <Build Include="dbo\Stored Procedures\SP_LP_addContactUs.sql" />
+    <Build Include="dbo\Stored Procedures\SP_PT_AnswereContactUs.sql" />
+    <Build Include="dbo\Functions\func_pt_getContactus_All.sql" />
+    <Build Include="dbo\Views\vw_getTypContactusDepartment.sql" />
+    <Build Include="dbo\Functions\func_pt_getContactus_All_Count.sql" />
+    <Build Include="dbo\Functions\func_getOrderStatusList.sql" />
+    <Build Include="dbo\User Defined Types\StringType.sql" />
+    <Build Include="dbo\Stored Procedures\SP_checkBarcode.sql" />
+    <Build Include="dbo\Functions\func_pt_itemGrp_activeItems.sql" />
+    <Build Include="dbo\Functions\func_pt_itemGrp_activeItems_Count.sql" />
+    <Build Include="dbo\Views\vw_PT_getItemGrpLeaf.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getTurnover.sql" />
+    <Build Include="dbo\Stored Procedures\SP_UpdatePriceQtyFile.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getUpdateResult.sql" />
+    <Build Include="dbo\Stored Procedures\SP_initApplication.sql" />
+    <Build Include="dbo\Stored Procedures\SP_reportCrashBug.sql" />
+    <Build Include="dbo\Stored Procedures\SP_colorAddUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\SP_colordelete.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getStoreColorList.sql" />
+    <Build Include="dbo\Tables\TB_CRASH_LOG.sql" />
+    <Build Include="dbo\Stored Procedures\SP_order_package_receive.sql" />
+    <Build Include="dbo\User Defined Types\UDT_order_package_receiveType.sql" />
+    <Build Include="dbo\Functions\func_pt_getItemsByBarcode.sql" />
+    <Build Include="dbo\Functions\func_pt_getItemsByBarcode_Count.sql" />
+    <Build Include="dbo\Functions\func_pt_getBarcodeType.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getMathItemWithBarcode.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getItemList.sql" />
+    <Build Include="dbo\Tables\TB_EXTERNAL_ACCESS_VALID.sql" />
+    <Build Include="dbo\Stored Procedures\SP_updateItemPriceQty.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getStoreList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_PT_getOrder.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getStoreCertificate.sql" />
+    <Build Include="dbo\Stored Procedures\SP_storeItemLocationAdd.sql" />
+    <Build Include="dbo\Stored Procedures\SP_storeItemLocationDelete.sql" />
+    <Build Include="dbo\Stored Procedures\SP_storeItemLocationGet.sql" />
+    <Build Include="dbo\Tables\TB_TYP_EDUCATION_TRANSLATION.sql" />
+    <Build Include="dbo\Tables\TB_TYP_EDUCATION.sql" />
+    <Build Include="dbo\Tables\TB_STORE_ITEMGRP_ACCESSLEVEL.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getEducationList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getItemWarrantyList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getBasicPanelSettings.sql" />
+    <Build Include="dbo\Tables\TB_STORE_PROMOTION.sql" />
+    <Build Include="dbo\Stored Procedures\SP_addStorePromotion.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getStorePromotion.sql" />
+    <Build Include="dbo\Stored Procedures\SP_addUpdateStoreItemGrpAccessLevel.sql" />
+    <Build Include="dbo\Functions\func_pt_getItems_All.sql" />
+    <Build Include="dbo\Functions\func_pt_getItems_All_Count.sql" />
+    <Build Include="dbo\Views\vw_getFunctions.sql" />
+    <Build Include="dbo\Stored Procedures\SP_PT_App_Func_addUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\SP_PT_app_func_delate.sql" />
+    <Build Include="dbo\Views\VW_itemMinMaxPrice_1.sql" />
+    <Build Include="dbo\Functions\FUNC_ValFormatPhone.sql" />
+    <Build Include="dbo\Functions\FUNC_emailIsValid_1.sql" />
+    <Build Include="dbo\User Defined Types\ViraSystemType.sql" />
+    <Build Include="dbo\Stored Procedures\SP_bulkyUpdateQtyPrice.sql" />
+    <Build Include="dbo\Functions\FUNC_validateTimeSchedule.sql" />
+    <Build Include="dbo\Stored Procedures\SP_updateStoreType.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getStoreTypeInfo.sql" />
+    <Build Include="dbo\Stored Procedures\SP_updateSaleNegativeStatus.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getItemSaleNegativeCnt.sql" />
+    <Build Include="dbo\Tables\TB_TYP_DELIVERY_METHOD.sql" />
+    <Build Include="dbo\Tables\TB_STORE_DELIVERYMETHODTYPE_EXCEPTION.sql" />
+    <Build Include="dbo\Stored Procedures\SPA_getStoreDeliveryMethodException.sql" />
+    <Build Include="dbo\Tables\TB_TYP_DELIVERY_METHOD_TRANSLATION.sql" />
+    <Build Include="dbo\Stored Procedures\SPA_getDeliveryMethodList.sql" />
+    <Build Include="dbo\Stored Procedures\SPA_DeliveryMethodExceptionAddUpdate.sql" />
+    <Build Include="dbo\Views\VW_itemMinMaxPrice_PerStore.sql" />
+    <Build Include="dbo\Functions\func_controlInventory.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getStoreItemEvaluation.sql" />
+    <Build Include="dbo\Stored Procedures\SP_itemEvaluationUpdateStatus.sql" />
+    <Build Include="dbo\Stored Procedures\SP_copyTemplateItemFromStore.sql" />
+    <Build Include="dbo\Stored Procedures\SP_PT_addStoreWithTemplateItemFromStore.sql" />
+    <Build Include="dbo\Views\vw_getAllItemGrp.sql" />
+    <Build Include="dbo\SP_getUserRateDetailes.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getStoreSocialNetwork.sql" />
+    <Build Include="dbo\Stored Procedures\SP_socialNetworkUpdate.sql" />
+    <Build Include="dbo\Views\vw_getPaymentStore.sql" />
+    <Build Include="dbo\Functions\func_store_item_opinionpoll_editTimeout.sql" />
+    <Build Include="dbo\Stored Procedures\SP_bulkyUpdateQtyPrice_NewVersion.sql" />
+    <Build Include="dbo\Stored Procedures\SP_updateRialCurency.sql" />
+    <Build Include="dbo\Stored Procedures\SP_updateItemReview.sql" />
+    <Build Include="dbo\Views\VW_getUserOrderDetailsInStore.sql" />
+    <Build Include="dbo\Views\VW_getItemInfoInStore.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getMessageListInPrtalConversation.sql" />
+    <Build Include="dbo\Functions\FUNC_getStoreCurrentShiftStatus.sql" />
+    <Build Include="dbo\Stored Procedures\SP_updateStoreAutoSyncTime.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getCustomCategoryItemDetailList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getItemReview.sql" />
+    <Build Include="dbo\Stored Procedures\SP_moveItemsToPanel.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getScondLanguagePanelSetting.sql" />
+    <Build Include="dbo\Stored Procedures\SP_addMessageAboutPoll.sql" />
+    <Build Include="dbo\User Defined Types\UDTT_optionType.sql" />
+    <Build Include="dbo\Stored Procedures\SP_updatePanelCommentSetting.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getStoreItemColorList.sql" />
+    <Build Include="dbo\Stored Procedures\SP_addUpdateItemSize.sql" />
+    <Build Include="dbo\Stored Procedures\SP_deleteItemSize.sql" />
+    <Build Include="dbo\Tables\TB_STORE_FAVORITE_LOCATION.sql" />
+    <Build Include="dbo\User Defined Types\SizeInfoItemType.sql" />
+    <Build Include="dbo\Stored Procedures\SP_opinionpoll_AddUpdate.sql" />
+    <Build Include="Storage\SearchItemCatalog.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getOpinionReport.sql" />
+    <Build Include="dbo\Functions\func_GetUserStaff.sql" />
+    <Build Include="dbo\Stored Procedures\SP_PT_updateMarketerUser.sql" />
+    <Build Include="dbo\Tables\TB_STORE_ITEM_FAVORITE.sql" />
+    <Build Include="dbo\Stored Procedures\SP_addFavoriteItem.sql" />
+    <Build Include="dbo\Stored Procedures\SP_deleteFavoriteItem.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getFavoriteItem.sql" />
+    <Build Include="dbo\Tables\TB_TYP_ITEM_GRP_RELATIONSHIP.sql" />
+    <Build Include="dbo\Stored Procedures\SP_seenMessage.sql" />
+    <Build Include="dbo\Stored Procedures\SP_updateReducedQty.sql" />
+    <Build Include="dbo\Tables\TB_REQUEST_CORRECTION_TEMPLATE_INFORMATION.sql" />
+    <Build Include="dbo\Stored Procedures\SP_RequestCorrectionItemTemplateInformationAddUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\SP_RequestCorrectionItemTemplateInformationGetList.sql" />
+    <Build Include="dbo\Functions\func_compare_versionCodes.sql" />
+    <Build Include="dbo\Tables\TB_TERMS_AND_CONDITIONS_ACCEPT.sql" />
+    <Build Include="Storage\searchStoreCatalog.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getCommentMessageListConversation.sql" />
+    <Build Include="dbo\User Defined Types\GuidType.sql" />
+    <Build Include="dbo\Tables\TB_DOCUMENT_REQUEST_CORRECTION_ITEM_TEMPLATE_INFORMATION.sql" />
+    <Build Include="dbo\Views\VW_storeEvaluation.sql" />
+    <Build Include="dbo\Views\VW_storeCommentOpinion.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getStoreOpinionReport.sql" />
+    <Build Include="dbo\SP_reportGetEmployee.sql" />
+    <Build Include="dbo\Stored Procedures\SP_reportGetEntities.sql" />
+    <Build Include="dbo\Stored Procedures\SP_getEvaluationReport.sql" />
+    <Build Include="dbo\Stored Procedures\SP_checkPanel.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\exec_SP_registerUser.sql" />
+    <None Include="AloniDB.publish.xml" />
+    <None Include="AloniKey.pfx" />
+    <None Include="SqlSchemaCompare_TestServer_TestDB.scmp" />
+    <None Include="SqlSchemaCompare_TestServer.scmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\chargeData.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clr\func_sendSms.cs" />
+    <Compile Include="Clr\func_sendPushNotification.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="AloniDB.refactorlog" />
+  </ItemGroup>
+</Project>

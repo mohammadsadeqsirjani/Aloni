@@ -1,0 +1,3 @@
+**run in developer command prompt**
+
+sn -i AloniKey.pfx VS_KEY_E6A3BF74AF05A594

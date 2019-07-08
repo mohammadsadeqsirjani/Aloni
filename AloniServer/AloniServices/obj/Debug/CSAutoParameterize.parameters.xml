@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="dbConStr-Web.config Connection String" description="dbConStr Connection String used in web.config by the application to access the database." defaultValue="Data Source=localhost\MSSQLSERVER_2014;Initial Catalog=AloniDB;Persist Security Info=True;User ID=sa;Password=sa" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="E:\\Aloni\\AloniServer\\AloniServices\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='dbConStr']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,0 +1,5 @@
+E:\Aloni\AloniServer\AloniDB\bin\Debug\AloniDB.dacpac
+E:\Aloni\AloniServer\AloniDB\bin\Debug\AloniDB.dll
+E:\Aloni\AloniServer\AloniDB\bin\Debug\AloniDB.pdb
+E:\Aloni\AloniServer\AloniDB\obj\Debug\AloniDB.dll
+E:\Aloni\AloniServer\AloniDB\obj\Debug\AloniDB.pdb

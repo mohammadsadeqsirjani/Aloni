@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="Default Web Site/api.aloni.shop" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^E:\\Aloni\\AloniServer\\AloniServices\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^E:\\Aloni\\AloniServer\\AloniServices\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="dbConStr-Web.config Connection String" description="" value="Data Source=localhost\MSSQLSERVER_2014;Initial Catalog=AloniDB;Persist Security Info=True;User ID=sa;Password=sa" tags="">
+    <parameterEntry kind="XmlFile" scope="E:\\Aloni\\AloniServer\\AloniServices\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='dbConStr']/@connectionString" />
+  </parameter>
+</parameters>
